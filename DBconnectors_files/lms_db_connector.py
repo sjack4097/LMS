@@ -17,7 +17,21 @@ class librarydbconnection:
         else:
             print("connection failed")
             exit(-1)
-obj=librarydbconnection()
+    def validateUser(self,username,password):
+        row = (username, password)
+        query = "SELECT * FROM `user` WHERE username=%s AND password=%s"
+        cursor.execute(query,row)
+        records = cursor.fetchall()
+        print(cursor.rowcount)
+        if cursor.rowcount==1:
+            print("Login successfully")
+            return  1
+        else:
+            print("Login Failed")
+            return 0
+"""obj=librarydbconnection()
 obj.makeconnection()
-
+Uname = input("Enter username")
+Pass = input("Enter password")
+obj.validateUser(Uname,Pass)"""
 
