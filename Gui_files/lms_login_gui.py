@@ -6,6 +6,7 @@ import  tkinter.messagebox
 libwindow=Tk()
 username = StringVar()
 password = StringVar()
+#this login page used to login to project
 
 def validateuser_ui():
     name= username.get()
